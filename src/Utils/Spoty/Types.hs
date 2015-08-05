@@ -9,7 +9,6 @@
 
 module Utils.Spoty.Types where
 
-import           Control.Applicative ((<$>), (<*>))
 import           Control.Lens (makeFields)
 import           Control.Monad (MonadPlus(..), mzero)
 import           Data.Aeson
@@ -33,7 +32,7 @@ require str obj =
 -- | Parse a map of key-value entries, wrapped in the given constructor.
 parseStrMap :: MonadPlus m => HM.HashMap k Value -> (k -> T.Text -> a) -> m [a]
 parseStrMap vals constr = sequence . flip map (HM.toList vals) $ \e ->
-  case e of 
+  case e of
     (key, String val) -> return $ constr key val
     _                 -> mzero
 
@@ -171,7 +170,7 @@ instance FromJSON Artist where
                          v .: "href" <*>
                          v .: "id" <*>
                          v .: "name" <*>
-                         v .: "uri" <*> 
+                         v .: "uri" <*>
                          require "genres" v
 
   parseJSON _          = mzero
@@ -227,7 +226,7 @@ instance FromJSON Track where
                          v .: "name" <*>
                          v .: "preview_url" <*>
                          v .: "track_number" <*>
-                         v .: "uri" <*> 
+                         v .: "uri" <*>
                          require "available_markets" v
 
   parseJSON _          = mzero
@@ -262,7 +261,7 @@ instance FromJSON AlbumDetails where
 data Album
   = Album
   {
-    _albumType :: T.Text,
+    _albumAlbumType :: T.Text,
     _albumAvailableMarkets :: [T.Text],
     _albumExternalURLs :: [ExternalURL],
     _albumHref :: T.Text,
