@@ -1,5 +1,5 @@
 name:                spoty
-version:             0.1.0.2
+version:             0.1.0.3
 synopsis:            Spotify web API wrapper
 description:         
   Web API <https://developer.spotify.com/web-api/> wrapper powered by lens and pipes, allowing easy access to public endpoints.
