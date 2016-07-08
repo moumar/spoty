@@ -38,10 +38,10 @@ extra-source-files:  Examples/Search.hs Examples/Albums.hs CHANGELOG
 library
   exposed-modules:     Utils.Spoty, Utils.Spoty.Types
   build-depends:
-                       aeson                 >= 0.7.0.6   && < 0.8.1,
+                       aeson,
                        base                  >= 4.8       && < 4.9,
-                       bytestring            >= 0.10      && < 0.11,
-                       lens                  >= 4.4       && < 4.13,
+                       bytestring,
+                       lens,
                        lens-aeson            >= 1         && < 1.1,
                        pipes                 >= 4.1       && < 4.2,
                        text                  >= 0.11      && < 1.4,
